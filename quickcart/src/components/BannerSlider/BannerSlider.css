@@ -1,0 +1,174 @@
+/* ════════════════════════════════════════════════════════
+   BANNER SLIDER
+════════════════════════════════════════════════════════ */
+.banner-wrap {
+  position: relative;
+  margin-bottom: 72px;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.banner-img {
+  width: 100%; height: 520px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(.88);
+  transition: opacity .42s ease;
+}
+
+.banner-overlay {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    rgba(15,12,8,.72) 0%,
+    rgba(15,12,8,.35) 48%,
+    rgba(15,12,8,.05) 100%
+  );
+}
+
+/* slide content */
+.slide-content {
+  position: absolute;
+  z-index: 2;
+  left: 64px;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 520px;
+  transition: opacity .42s ease, transform .42s ease;
+}
+
+.slide-eyebrow {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  font-weight: 600;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.slide-eyebrow::before {
+  content: '';
+  width: 32px; height: 1px;
+  background: var(--gold-light);
+  display: block;
+}
+
+.slide-content h2 {
+  font-family: var(--font-display);
+  font-size: 58px;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.08;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+.slide-content h2 em { font-style: italic; color: var(--gold-light); }
+
+.slide-content p {
+  font-size: 14.5px;
+  color: rgba(255,255,255,.72);
+  margin-bottom: 32px;
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+.slide-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: var(--r-sm);
+  transition: all .3s var(--ease);
+  border: none; cursor: pointer;
+}
+.slide-cta:hover {
+  background: var(--gold-light);
+  gap: 16px;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(184,137,42,.35);
+}
+
+/* dot nav */
+.banner-dots {
+  position: absolute;
+  bottom: 24px;
+  left: 64px;
+  z-index: 3;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.banner-dots .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.4);
+  cursor: pointer;
+  transition: all .3s var(--ease);
+  border: none;
+}
+.banner-dots .dot.active {
+  width: 24px;
+  border-radius: 3px;
+  background: var(--gold-light);
+}
+
+/* slide counter */
+.slide-counter {
+  position: absolute;
+  top: 28px; right: 36px;
+  z-index: 3;
+  font-size: 11px;
+  color: rgba(255,255,255,.55);
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+.slide-counter span { color: rgba(255,255,255,.9); font-size: 18px; font-family: var(--font-display); }
+
+/* trust badges */
+.banner-badges {
+  position: absolute;
+  bottom: 24px; right: 36px;
+  z-index: 3;
+  display: flex; gap: 10px;
+}
+.banner-badge {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(8px);
+  border-radius: var(--r-sm);
+  padding: 8px 14px;
+  display: flex; align-items: center; gap: 7px;
+  color: #fff; font-size: 11px; font-weight: 500;
+}
+.banner-badge-icon { font-size: 15px; }
+
+/* ─── RESPONSIVE ────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .slide-content h2 { font-size: 46px; }
+}
+@media (max-width: 900px) {
+  .banner-img { height: 380px; }
+  .slide-content { left: 40px; max-width: 400px; }
+  .slide-content h2 { font-size: 38px; }
+  .banner-badges { display: none; }
+}
+@media (max-width: 640px) {
+  .banner-img { height: 260px; }
+  .banner-wrap { border-radius: var(--r-lg); margin-bottom: 48px; }
+  .slide-content { left: 24px; right: 24px; max-width: none; }
+  .slide-content h2 { font-size: 28px; }
+  .slide-content p { display: none; }
+  .slide-cta { padding: 11px 20px; font-size: 11px; }
+  .slide-eyebrow { font-size: 9px; }
+  .banner-dots { left: 24px; bottom: 16px; }
+  .slide-counter { top: 14px; right: 20px; }
+}

@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+/* ════════════════════════════════════════════════════════
+   LIGHT MODE (DEFAULT)
+════════════════════════════════════════════════════════ */
+:root {
+  --bg:        #f9f7f4;
+  --bg-2:      #ffffff;
+  --bg-3:      #f0ede8;
+  --bg-4:      #e8e4dd;
+  --surface:   #ffffff;
+  --surface-2: #f5f2ee;
+  --text:      #1a1714;
+  --text-2:    #3d3a36;
+  --muted:     #8a8580;
+  --gold:      #b8892a;
+  --gold-light:#c9a84c;
+  --gold-glow: rgba(184,137,42,.12);
+  --gold-line: rgba(184,137,42,.22);
+  --border:    rgba(0,0,0,.08);
+  --border-2:  rgba(0,0,0,.14);
+  --danger:    #dc3b3b;
+  --success:   #2d8a4e;
+  --shadow-sm: 0 2px 12px rgba(0,0,0,.06);
+  --shadow-md: 0 8px 32px rgba(0,0,0,.1);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,.14);
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body:    'DM Sans', sans-serif;
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --r-xl: 30px;
+  --ease: cubic-bezier(.4,0,.2,1);
+}
+
+/* ════════════════════════════════════════════════════════
+   DARK MODE
+════════════════════════════════════════════════════════ */
+.darkmode {
+  --bg:        #0b0c0f;
+  --bg-2:      #131519;
+  --bg-3:      #1b1d23;
+  --bg-4:      #24262e;
+  --surface:   #1b1d23;
+  --surface-2: #24262e;
+  --text:      #f0ece4;
+  --text-2:    #c8c4bc;
+  --muted:     #7a7b83;
+  --gold:      #c9a84c;
+  --gold-light:#e0bb60;
+  --gold-glow: rgba(201,168,76,.15);
+  --gold-line: rgba(201,168,76,.22);
+  --border:    rgba(255,255,255,.07);
+  --border-2:  rgba(255,255,255,.13);
+  --danger:    #e05252;
+  --success:   #3da05f;
+  --shadow-sm: 0 2px 12px rgba(0,0,0,.3);
+  --shadow-md: 0 8px 32px rgba(0,0,0,.45);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,.6);
+}
+
+/* ════════════════════════════════════════════════════════
+   RESET & BASE
+════════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background .35s var(--ease), color .35s var(--ease);
+}
+#root { background: var(--bg); min-height: 100vh; transition: background .35s var(--ease); }
+a { text-decoration: none; color: inherit; }
+img { display: block; }
+button { font-family: var(--font-body); }
+
+/* ─── SCROLLBAR ─────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-3); }
+::-webkit-scrollbar-thumb { background: var(--gold-line); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* ─── MAIN LAYOUT ───────────────────────────────────── */
+.main { max-width: 1380px; margin: 0 auto; padding: 36px 32px; }
+
+/* ─── SHARED BUTTONS ────────────────────────────────── */
+.btn {
+  cursor: pointer; border: none; padding: 11px 22px; border-radius: var(--r-sm);
+  font-weight: 600; font-size: 11.5px; letter-spacing: 1px; text-transform: uppercase;
+  font-family: var(--font-body); transition: all .25s var(--ease);
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+}
+.btn.primary { background: var(--gold); color: #fff; font-weight: 700; flex: 0; }
+.btn.primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 10px 28px var(--gold-glow); }
+.btn.ghost {
+  background: transparent; border: 1.5px solid var(--border-2); color: var(--muted); flex: 1;
+}
+.btn.ghost:hover { border-color: var(--danger); color: var(--danger); background: rgba(220,59,59,.05); }
+.btn.load {
+  background: transparent; border: 1.5px solid var(--gold-line); color: var(--gold);
+  padding: 13px 40px; font-size: 11.5px;
+}
+.btn.load:hover { background: var(--gold-glow); transform: translateY(-2px); }
+.center { text-align: center; margin: 12px 0 48px; }
+
+/* ─── MISC ──────────────────────────────────────────── */
+.error-box { color: var(--danger); font-size: 16px; padding: 20px; text-align: center; }
+.loading {
+  display: flex; align-items: center; justify-content: center; min-height: 60vh;
+  color: var(--muted); font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+}
+hr { border: none; border-top: 1px solid var(--border); }
+
+/* ─── SKELETON LOADER ───────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -700px 0; }
+  100% { background-position: 700px 0; }
+}
+.skeleton {
+  border-radius: var(--r-lg);
+  background: linear-gradient(90deg, var(--bg-3) 25%, var(--bg-4) 50%, var(--bg-3) 75%);
+  background-size: 700px 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+.skeleton-card { height: 340px; }
+
+/* ════════════════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .main { padding: 22px 16px; }
+  .btn.primary {flex: 1;}
+}
