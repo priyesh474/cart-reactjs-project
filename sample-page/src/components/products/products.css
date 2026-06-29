@@ -1,0 +1,46 @@
+.sell-products{
+  padding: 80px 80px;
+  text-align: center;
+  background: #F7F7F7;
+}
+.section-title{
+    margin-bottom: 20px;
+}
+.tab-head{
+    background: #cccccc;
+    border-radius: 35px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    width: max-content;
+    margin: 0 auto;
+    gap: 10px;
+}
+.tab-head button{
+    background: transparent;
+    padding: 10px 20px;
+    border-radius: 35px;
+    border: 0;
+    cursor: pointer;
+    color: #5e5e5e;
+}
+.tab-head button.active{
+    background: #fff;
+}
+.tab-wrap{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 20px 0;
+}
+.tab-wrap img{
+    width: 217px;
+    height: 255px;
+    object-fit: cover;
+    margin: 20px auto;
+}
+.tab-card{
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+}

@@ -1,0 +1,25 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+header{
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+nav ul{
+    display: flex;
+    gap: 40px;
+}
+.shop-icon{
+    color: #fff;
+}

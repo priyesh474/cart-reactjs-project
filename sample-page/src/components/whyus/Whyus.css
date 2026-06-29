@@ -1,0 +1,28 @@
+.why-us{
+  padding: 80px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.section-title{
+  flex: 35%;
+}
+.box-wrap{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.box-wrap h3{
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.box-wrap p{
+  font-size: 14px;
+  margin-bottom: 16px; 
+}
+.box-wrap a{
+  font-size: 14px;
+  margin-bottom: 16px;
+  color: #E58411;
+}
